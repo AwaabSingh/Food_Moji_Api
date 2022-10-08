@@ -3,7 +3,7 @@ import path from 'path';
 import dotenv from 'dotenv'
 
 // Routes
-import { AdminRoutes, ShoopingRoute, VendorRoutes } from '../routes';
+import { AdminRoutes, ShoopingRoute, VendorRoutes, CustomerRoutes } from '../routes';
 import connectDB from '../config/db';
 
 export default async( app: Application) => {
@@ -19,6 +19,7 @@ export default async( app: Application) => {
 
     app.use('/api/admin', AdminRoutes);
     app.use('/api/vendor', VendorRoutes);
+    app.use('/api/customer' , CustomerRoutes)
     app.use('/api',ShoopingRoute)
 
    return app
